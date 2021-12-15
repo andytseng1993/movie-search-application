@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h2>OMDb Movie Search</h2>
+  <form>
+    <input type="text" name="search" id="search">
+    <label for="type">Type: </label>
+    <select name="type" id="type" >
+      <option value="movie" selected>movie</option>
+      <option value="series">series</option>
+      <option value="episode">episode</option>
+    </select>
+    <button type="button" id="searchBtn">Search</button>
+    <button type="button" id="resetBtn">Reset</button>
+  </form>
+  <section>
+    <div id="result"></div>
+    <div id="pager"></div>
+  </section>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script src="./script.js"></script>
+</body>
+</html>
