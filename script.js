@@ -28,6 +28,8 @@ document.getElementById('search').addEventListener('keydown',function(event){
 document.getElementById('resetBtn').addEventListener('click', function () {
   document.getElementById('search').value= ''
   document.getElementById('type').value = 'movie'
+  document.getElementById('result').innerHTML = 'Please enter the search term and click search button :)'
+  document.getElementById('pager').innerHTML = ''
 })
 
 

@@ -1,20 +1,110 @@
-#result{
-  display: flex;
-  flex-wrap: wrap;
-}
-#result ul{
-  margin: 10px;
+body{
+  margin: 0;
   padding: 0;
 }
-#result ul li{
-
-  list-style-type: none;
-  padding: 5px 0px;
-  width: 300px;
-  font-size: 18px;
+*{
+  font-family: "Lato Extended","Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-#result ul li img{
-  width: 300px;
+h1{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+}
+#search,#type{
+  border-radius: 3px;
+  height: 1.8rem;
+  font-size: 16px;
+  margin: 0px 5px;
+  padding: 2px 10px;
+  border: 1.5px solid rgb(163, 163, 163);
+}
+#search:hover,#type:hover{
+  border: 1.5px solid rgb(99, 99, 99);
+  background-color: rgb(250, 250, 250);
+}
+#search:focus,#type:focus{
+  background-color: rgb(255, 255, 255);
+}
+#searchBtn,#resetBtn{
+  padding: 7px 20px;
+  margin: 5px;
+  border-radius: 6px;
+  border: 1px solid rgb(163, 163, 163);
+  font-size: 16px;
+}
+#searchBtn{
+  background-color: #008ee2;
+  color: white;
+}
+#searchBtn:hover{
+  background-color: #007ac0;
+}
+#searchBtn:active,#resetBtn:active{
+  transform: translate(1px,1px);
+}
+#resetBtn{
+  background-color: #ff6565;
+  color: white;
+}
+#resetBtn:hover{
+  background-color: #df5858;
+}
+section{
+  position: relative;
+  width: 95%;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+}
+#result{
+  background-color: rgb(243, 243, 243);
+  padding: 25px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  border-radius: 5px;
+  font-size: 24px;
+}
+#result ul{
+  background-color: #fff;
+  margin: 5px 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+#result ul li{
+  list-style-type: none;
+  margin: 0px 5px;
+  padding: 15px 5px;
+  width: 260px;
+  font-size: 18px;
+  border-top: rgb(235, 235, 235) 1px solid;
+}
+#result ul img{
+  border-radius: 5px 5px 0px 0px;
+  width: 280px;
+}
+#result ul li.title{
+  font-size: 21px;
+  font-weight: 600;
+  border-top: none;
+}
+#result ul li.link{
+  padding-top: 20px;
+}
+#result ul li a{
+  text-decoration: none;
+  margin-top: 10px;
 }
 
 #pager{
@@ -29,7 +119,6 @@
   padding: 2px 7px;
   background-color: #eee;
   border: 1px #ccc solid;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #pager span:active{
   transform: translate(1px,1px);
@@ -42,4 +131,5 @@
 }
 #pager span.skip{
   cursor:default;
+
 }
