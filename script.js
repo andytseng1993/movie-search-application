@@ -1,12 +1,27 @@
 'use strict',
+window.addEventListener('load',function(){
+  document.getElementById('search').focus()
+})
 document.getElementById('searchBtn').addEventListener('click',function(){
   let search = document.getElementById('search')
   let nowPage =1
-  let totalPage=0;
   if(search.value){
     searchMovie(nowPage)
   }else{
     alert('Please enter the search term :)')
+  }
+})
+document.getElementById('search').addEventListener('keydown',function(event){
+  if (event.key =='Enter'){
+    event.preventDefault()
+    let search = document.getElementById('search')
+    let nowPage = 1
+    document.getElementById('search').blur()
+    if (search.value) {
+      searchMovie(nowPage)
+    } else {
+      alert('Please enter the search term :)')
+    }
   }
 })
 
@@ -14,6 +29,7 @@ document.getElementById('resetBtn').addEventListener('click', function () {
   document.getElementById('search').value= ''
   document.getElementById('type').value = 'movie'
 })
+
 
 function searchMovie(nowPage){
   let search = document.getElementById('search')
@@ -27,10 +43,10 @@ function searchMovie(nowPage){
             let ul = document.createElement('ul')
             let li = `
               <img src="${movie.Poster}" alt="${movie.Title}">
-              <li>Title: ${movie.Title}</li>
-              <li>Type: ${movie.Type}</li>
-              <li>year: ${movie.Year}</li>
-              <li><a href="https://www.imdb.com/title/${movie.imdbID}">View on IMDb</a></li>
+              <li class='title'>Title: ${movie.Title}</li>
+              <li class='type'>Type: ${movie.Type}</li>
+              <li class='year'>year: ${movie.Year}</li>
+              <li class='link'><a href="https://www.imdb.com/title/${movie.imdbID}">View on IMDb</a></li>
             `
             ul.innerHTML=li
             document.getElementById('result').appendChild(ul)
