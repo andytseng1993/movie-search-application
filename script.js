@@ -45,7 +45,7 @@ function searchMovie(nowPage){
             let ul = document.createElement('ul')
             let li = `
               <img src="${movie.Poster}" alt="${movie.Title}">
-              <li class='title'>Title: ${movie.Title}</li>
+              <li class='title'>${movie.Title}</li>
               <li class='type'>Type: ${movie.Type}</li>
               <li class='year'>year: ${movie.Year}</li>
               <li class='link'><a href="https://www.imdb.com/title/${movie.imdbID}">View on IMDb</a></li>
@@ -53,12 +53,17 @@ function searchMovie(nowPage){
             ul.innerHTML=li
             document.getElementById('result').appendChild(ul)
           }
+          let fillingEmpty=`<ul class="fillingEmpty"></ul>
+                            <ul class="fillingEmpty"></ul>
+                            <ul class="fillingEmpty"></ul>
+                            <ul class="fillingEmpty"></ul>`
+          document.getElementById('result').innerHTML += fillingEmpty
           if (result.totalResults>10){
             let totalPage = Math.round(result.totalResults/10)
             document.getElementById('pager').innerHTML = ''
             nowPage = parseInt(nowPage)
             if (nowPage>1){
-              let prePage =`<button type="button" id='prePage'>&#9666 Previous</button>`
+              let prePage =`<button type="button" id='prePage'> <span>&#9666</span>Previous</button>`
               document.getElementById('pager').innerHTML += prePage
             }
             
@@ -99,7 +104,7 @@ function searchMovie(nowPage){
               }
             }
             if (nowPage < totalPage){
-              let nextPage = `<button type="button" id='nextPage'>&#9656 Next</button>`
+              let nextPage = `<button type="button" id='nextPage'>  Next<span>&#9656</span></button>`
               document.getElementById('pager').innerHTML += nextPage
             }
             $('span.page').on('click', function () {
